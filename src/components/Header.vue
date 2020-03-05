@@ -16,10 +16,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <router-link class="nav-link" to="/cards">Cards</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/todos">Todos</router-link>
                 </li>
                 <li class="nav-item dropdown">
                     <a
@@ -31,17 +34,13 @@
                         aria-haspopup="true"
                         aria-expanded="false"
                     >
-                        Dropdown
+                        Reference
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" v-for="(item, idx) in links" :key="idx" :href="item.url">{{
+                            item.text
+                        }}</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -55,6 +54,15 @@
 <script>
 export default {
     name: 'Header',
+    data: () => ({
+        links: [
+            { text: 'Core Docs', url: 'https://vuejs.org' },
+            { text: 'Forum', url: 'https://forum.vuejs.org' },
+            { text: 'Community', url: 'https://chat.vuejs.org' },
+            { text: 'Twitter', url: 'https://twitter.com/vuejs' },
+            { text: 'News', url: 'https://news.vuejs.org' },
+        ],
+    }),
 };
 </script>
 

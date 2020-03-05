@@ -11,12 +11,10 @@
             check out the
             <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
         </p>
-        <table-todos />
     </div>
 </template>
 
 <script>
-import TableTodos from './TableTodos';
 export default {
     name: 'HelloWorld',
     props: {
@@ -24,16 +22,9 @@ export default {
     },
     data: function() {
         return {
-            links: [
-                { text: 'Core Docs', url: 'https://vuejs.org' },
-                { text: 'Forum', url: 'https://forum.vuejs.org' },
-                { text: 'Community', url: 'https://chat.vuejs.org' },
-                { text: 'Twitter', url: 'https://twitter.com/vuejs' },
-                { text: 'News', url: 'https://news.vuejs.org' },
-            ],
+            
         };
     },
-    components: { TableTodos },
 };
 </script>
 
