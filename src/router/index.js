@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HelloWorld from '../components/HelloWorld';
 import ListCard from '../components/ListCard';
+import Comment from '../components/Comment';
 
 Vue.use(VueRouter);
 
@@ -22,11 +23,11 @@ const routes = [
         name: 'Todos',
         component: () => import(/* webpackChunkName: "todo" */ '../components/TableTodos.vue'),
     },
-    // {
-    //     path: '/examples',
-    //     name: 'Todos',
-    //     component: ,
-    // },
+    {
+        path: '/comment',
+        name: 'Comment',
+        component: Comment,
+    },
 ];
 
 const router = new VueRouter({
