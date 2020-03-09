@@ -22,6 +22,11 @@ const routes = [
         name: 'Todos',
         component: () => import(/* webpackChunkName: "todo" */ '../components/TableTodos.vue'),
     },
+    // {
+    //     path: '/examples',
+    //     name: 'Todos',
+    //     component: ,
+    // },
 ];
 
 const router = new VueRouter({
