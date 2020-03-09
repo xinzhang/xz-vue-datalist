@@ -65,11 +65,17 @@ export default {
     width: 140px;
 }
 
-button {
+.special {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     font-size: 12px;
+}
+
+button {
     border: none;
     border-radius: 1000px;
-    text-transform: uppercase;
+    @extend .special;
     &.inc {
         font-size: 16px;
         background: #fff;
@@ -81,6 +87,11 @@ button {
         width: 235px;
         margin-top: 10px;
         padding: 8px 13px;
+        transition: 0.25s all ease-in;
+        &:hover {
+            opacity: 0.7;
+            transition: 0.25s all ease-out;
+        }
     }
 }
 </style>
